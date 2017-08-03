@@ -33,7 +33,7 @@ public class Smartphone {
 	//CPU情報をセットするメソッド
 	public void SetCpu(String aCpu) {
 		if(aCpu.length() == 0) {
-			throw new IllegalArgumentException("CPUがセットされていません");
+			System.out.println("CPUの値が不正です");
 		}
 		this.Cpu = aCpu;
 		System.out.println("CPUは"+this.Cpu+"です");

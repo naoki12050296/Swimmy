@@ -13,10 +13,10 @@ public class Main {
 		//Iphone7.tell(6255);
 
 		//CPUをセットするメソッドを呼び出し
-		Iphone7.SetCpu("intel");
+		//Iphone7.SetCpu("intel");
 
 		//CPUをセットするメソッドを呼び出し（例外処理発生）
-		//Iphone7.SetCpu("");
+		Iphone7.SetCpu(null);
 
 		//RAMとROMをセット
 		Iphone7.SetRamRom(4,128);
