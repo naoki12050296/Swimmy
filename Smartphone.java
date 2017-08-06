@@ -1,6 +1,11 @@
 package swimmypractice5;
 
+import swimmypractice5.NotOsInfoException.NotCpuInfoException;
+import swimmypractice5.NotOsInfoException.NotCpuInfoException.NotRamInfoException;
+import swimmypractice5.NotOsInfoException.NotCpuInfoException.NotRamInfoException.NotRomInfoException;
+
 public class Smartphone {
+
 
 	//OS情報を定義
 	public static enum SmartphoneKind{iOS , Android};
@@ -21,6 +26,7 @@ public class Smartphone {
 	public Smartphone(SmartphoneKind aKind,String aName) {
 		this.Kind = aKind;
 		this.Name = aName;
+		return;
 	}
 	//OS情報のgetterメソッド
 	public SmartphoneKind getKind() {
@@ -63,29 +69,54 @@ public class Smartphone {
 	}
 
 	//音楽DLするメソッド（何もしない）
-	public void music() throws Exception  {
+	public void music() throws CheckException  {
 		}
 
 
 	//音声通話のメソッド（例外チェック込み）
-	public void tell(int countrycode,String phonenumber) throws Exception {
-		Check check = new Check();
-		check.less1(getKind());
-		check.less2(getCpu());
-		check.less3(getRam());
-		check.less4(getRom());
-		
+	public void tell(int countrycode,String phonenumber) throws NotOsInfoException,NotCpuInfoException{
+		if(this.Kind == null) {
+			throw new NotOsInfoException();
+		}
+		else if(this.Cpu == null) {
+			throw new NotCpuInfoException();
+		}
+		else if(this.Cpu.isEmpty()) {
+			throw new NotCpuInfoException();
+		}
+		else if(this.Ram == 0) {
+			throw new NotRamInfoException();
+		}
+		else if(this.Rom == 0) {
+			throw new NotRomInfoException();
+		}
+
 		System.out.println(phonenumber + "の電話を呼び出しています");
 		}
 
+
 	//LINE電話のメソッド（例外チェック込み）
-	public void tell(int lineid) throws Exception{
-		Check check = new Check();
-		check.less1(getKind());
-		check.less2(getCpu());
-		check.less3(getRam());
-		check.less4(getRom());
-		
+	public void tell(int lineid) throws CheckException{
+
+		if(Kind == null) {
+			throw new NotOsInfoException();
+		}
+		else if(Cpu == null) {
+			throw new NotCpuInfoException();
+		}
+		else if(Cpu.isEmpty()) {
+			throw new NotCpuInfoException();
+		}
+		else if(Ram == 0) {
+			throw new NotRamInfoException();
+		}
+		else if(Rom == 0) {
+			throw new NotRomInfoException();
+		}
+
 		System.out.println(lineid + "のLINEを呼び出します");
 		}
+
+
+
 }

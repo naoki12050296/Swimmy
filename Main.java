@@ -2,15 +2,16 @@ package swimmypractice5;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
 
 	try {
+
 		//Iphoneのインスタンスを生成
 		Smartphone Iphone7 = new Iphone("NaokiPhone");
 
 		//LINE電話メソッドを呼び出し（例外処理発生）
-		//Iphone7.tell(6255);
+		Iphone7.tell(6255);
 
 		//CPUをセットするメソッドを呼び出し
 		Iphone7.setCpu("intel");
@@ -34,6 +35,7 @@ public class Main {
 		Iphone7.tell(6255);
 
 
+
 		//Androidインスタンスを生成
 		Smartphone Galaxy = new Android("Android");
 
@@ -44,7 +46,7 @@ public class Main {
 		Galaxy.setRam(8);
 
 		//ROMをセット
-		//Galaxy.setRom(250);
+		Galaxy.setRom(250);
 
 		//音楽DLメソッドをオーバーライド
 		Galaxy.music();
@@ -52,15 +54,16 @@ public class Main {
 		//音声通話メソッドを呼び出し
 		Galaxy.tell(80, "090-1234-5678");
 
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	//}
-
-	//catch(IllegalArgumentException error) {
-	//	System.out.println(error);
-	//}
 	}
+
+	catch (CheckException e) {
+		e.printStackTrace();
+	}
+
+	/*catch(IllegalArgumentException error) {
+		System.out.println(error);
+	}*/
+	}
+
 
 }

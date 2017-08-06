@@ -1,6 +1,5 @@
 package swimmypractice5;
 
-
 public class Iphone extends Smartphone{
 
 	//コンストラクタ１
@@ -13,13 +12,7 @@ public class Iphone extends Smartphone{
 	}
 
 	//音楽DLメソッド（例外チェック込み）
-	public void music() throws Exception {
-		Check check = new Check();
-		check.less1(getKind());
-		check.less2(getCpu());
-		check.less3(getRam());
-		check.less4(getRom());
-
+	public void music() throws CheckException {
 		System.out.println("Itunesでダウンロードしました");
 	}
 }
