@@ -1,8 +1,5 @@
 package swimmypractice5;
 
-import swimmypractice5.NotOsInfoException.NotCpuInfoException;
-import swimmypractice5.NotOsInfoException.NotCpuInfoException.NotRamInfoException;
-import swimmypractice5.NotOsInfoException.NotCpuInfoException.NotRamInfoException.NotRomInfoException;
 
 public class Smartphone {
 
@@ -74,7 +71,7 @@ public class Smartphone {
 
 
 	//音声通話のメソッド（例外チェック込み）
-	public void tell(int countrycode,String phonenumber) throws NotOsInfoException,NotCpuInfoException{
+	public void tell(int countrycode,String phonenumber) throws CheckException{
 		if(this.Kind == null) {
 			throw new NotOsInfoException();
 		}

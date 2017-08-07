@@ -11,7 +11,7 @@ public class Main {
 		Smartphone Iphone7 = new Iphone("NaokiPhone");
 
 		//LINE電話メソッドを呼び出し（例外処理発生）
-		Iphone7.tell(6255);
+		//Iphone7.tell(6255);
 
 		//CPUをセットするメソッドを呼び出し
 		Iphone7.setCpu("intel");
@@ -26,7 +26,7 @@ public class Main {
 		Iphone7.setRom(128);
 
 		//OS情報初期化(例外処理発生)
-		//Iphone7.setKind(null);
+		Iphone7.setKind(null);
 
 		//音楽DLメソッドをオーバーライド
 		Iphone7.music();
@@ -60,9 +60,6 @@ public class Main {
 		e.printStackTrace();
 	}
 
-	/*catch(IllegalArgumentException error) {
-		System.out.println(error);
-	}*/
 	}
 
 
